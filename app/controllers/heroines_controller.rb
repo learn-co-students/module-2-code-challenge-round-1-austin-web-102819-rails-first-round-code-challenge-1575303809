@@ -28,6 +28,12 @@ class HeroinesController < ApplicationController
     end
   end
 
+  def search
+    #did not have enough time to complete the search bar. 
+    query= params[:q]
+    @heroines= []
+  end
+
   private
   def heroine_params
     params.require(:heroine).permit(:name, :super_name, :power_id)
