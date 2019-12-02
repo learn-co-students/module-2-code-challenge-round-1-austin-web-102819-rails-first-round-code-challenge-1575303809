@@ -1,0 +1,12 @@
+<h1>New</h1>
+
+<%= form_with model: @heroine do |f|%>
+<label>Name:</label><br>
+<%= f.text_field :name %><br>
+<label>Super Name:</label><br>
+<%= f.text_field :super_name %><br>
+<label>Power:</label><br>
+<%= f.collection_select :power_id, Power.order(:name), :id, :name %><br>
+
+<%= f.submit %>
+<% end %>

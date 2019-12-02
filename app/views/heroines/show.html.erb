@@ -1,0 +1,4 @@
+<h1><%= @heroine.super_name%></h1><br>
+<h2><%= @heroine.name%></h2><br>
+<% @power = Power.find(@heroine.power_id)%>
+<p> <%= link_to @power.name, power_path(@power)%>: <%=@power.description%></p>
