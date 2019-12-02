@@ -1,0 +1,10 @@
+<h1><%=@heroine.super_name%></h1>
+
+<h3>Name: <%=@heroine.name%></h3>
+
+<% @powers.each do |power| %>
+<% if power.id == @heroine[:power_id] %>
+<%= link_to power.name, power%>
+<%end%>
+<%end%>
+

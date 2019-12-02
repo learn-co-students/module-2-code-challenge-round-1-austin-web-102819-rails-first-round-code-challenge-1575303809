@@ -1,0 +1,17 @@
+<% if @heroine.errors.any? %>
+        <% @heroine.errors.full_messages.each do |msg| %>
+            <%= msg %>
+        <% end %>
+<% end %>
+
+<%= form_with model: @heroine  do |f| %>
+
+<label>Super Name:</label> <%= f.text_field :super_name %>
+
+<label>Name: </label> <%= f.text_field :name %>
+
+<label>Power: </label> <%= collection_select(:heroine, :power_id, Power.all, :id, :name) %>
+
+
+  <%= f.submit "Create Heroine!" %>
+<% end %>
