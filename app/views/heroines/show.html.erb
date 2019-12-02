@@ -1,0 +1,12 @@
+<br>
+<p>Heroine Name:</p> <h1><%= @heroine.name %></h1><br>
+<div>Super Name: <%= @heroine.super_name%></div>
+
+
+
+<% @powers.find do |power| %>
+<% if power.id == @heroine.power_id %><br>
+<p>Heroine Super power:</p> <h2><%=link_to power.name, power_path(power.id) %></h2>
+<br><br>
+<% end %>
+<% end %>
