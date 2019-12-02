@@ -1,0 +1,25 @@
+<h1> Create a Heroine </h1>
+<%= form_for @heroine do |h| %>
+    <%= h.label :name %>
+    <%= h.text_field :name %><br>
+
+    <%= h.label :super_name %>
+    <%= h.text_field :super_name %><br>
+    <%= h.label :power %>
+    <%= h.collection_select(:power_id, Power.all, :id, :name, prompt: true) %><br>
+
+    <%= h.submit %>
+<% end %>
+
+
+<% if @heroine.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@heroine.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @heroine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
